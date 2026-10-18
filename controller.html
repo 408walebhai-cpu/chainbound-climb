@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Chainbound Climb — Controller</title><link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script></head>
+<body><div class="phone">
+<div class="logo" style="text-align:center">CHAINBOUND <span>CLIMB</span></div>
+<div class="join" id="joinBox"><p class="muted" style="text-align:center">Enter the 4-letter room code shown on the TV / laptop</p><input class="codein" id="code" maxlength="4" placeholder="ABCD" autocomplete="off"><div style="height:10px"></div><button class="btn" id="joinBtn" style="width:100%">Join Game</button><p class="muted" id="joinStatus" style="text-align:center"></p></div>
+<div class="status" id="status">Not connected</div>
+<div class="pad">
+<button class="touch" id="left">◀</button><button class="touch" id="right">▶</button><button class="touch jump" id="jump">JUMP</button>
+</div><button class="touch pull" id="pull" style="min-height:84px">⛓️ HOLD TO PULL / BRACE PARTNER</button>
+<p class="muted" style="text-align:center;font-size:13px">Keep this tab open. Buttons work by touch or mouse. Your player colour will light up above once the host assigns you.</p>
+</div><script src="controller.js"></script></body></html>

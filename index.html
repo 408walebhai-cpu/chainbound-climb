@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chainbound Climb — 2-Player Chained Co-op</title><link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script></head>
+<body><div class="wrap">
+<div class="top"><div class="logo">CHAINBOUND <span>CLIMB</span></div><div class="row"><span class="pill">📺 Host screen</span><span class="pill">📱 Phones = controllers</span><span class="pill">⛓️ 2 players, one chain</span></div></div>
+<p class="muted">An original 2D chained co-op climb inspired by the hell-to-heaven ascent idea: rise from ember depths to bright skies — together, or drag each other down. No assets from any commercial game are used.</p>
+<div class="stage"><canvas id="game" width="1280" height="720"></canvas>
+<div class="hud"><div class="lobby" id="lobby"><div class="panel">
+<div><h1>Climb chained.<br>Fall together.</h1><p class="muted">Open this page on a TV/laptop. Each player joins on their phone using the room code or QR. Keyboard also works for a solo demo: <span class="kbd">A</span><span class="kbd">D</span>+<span class="kbd">W</span> for Player 1, arrows for Player 2.</p>
+<div class="row" style="margin:14px 0"><button class="btn" id="startBtn">▶ Start Level Mode</button><button class="btn secondary" id="endlessBtn">∞ Endless Mode</button><button class="btn secondary" id="soundBtn">🔊 Sound: On</button></div>
+<div class="row"><div class="slot" id="slot1"><span class="dot" id="dot1"></span> Player 1 — <b id="p1s">waiting…</b></div><div class="slot" id="slot2"><span class="dot" id="dot2"></span> Player 2 — <b id="p2s">waiting…</b></div></div>
+<p class="muted" id="netStatus">Setting up room…</p><p class="muted" style="font-size:13px">Tip: you can start with keyboard even before phones connect. Phones can also open the controller link in another tab on this same device for a demo.</p></div>
+<div><div class="muted" style="text-align:center;margin-bottom:8px">ROOM CODE</div><div class="code" id="roomCode">····</div><div class="qr" style="margin-top:12px"><canvas id="qr" width="180" height="180"></canvas></div><p class="muted" style="text-align:center;word-break:break-all;font-size:13px" id="ctrlLink"></p></div>
+</div></div></div></div>
+<div class="controls">
+<div class="card2"><h2>🎮 Controls</h2><p class="muted">Phone: ◀ ▶ move, <b>JUMP</b> (hold for higher feel), <b>PULL</b> to brace and haul your dangling partner up.<br>Keyboard P1: A/D + W &nbsp;•&nbsp; P2: ←/→ + ↑ &nbsp;•&nbsp; Pull: S / ↓ &nbsp;•&nbsp; Restart: R</p></div>
+<div class="card2"><h2>🏁 Modes</h2><p class="muted"><b>Level:</b> reach the golden flag at the summit. Checkpoints every ~15 platforms revive you if you both fall.<br><b>Endless:</b> climb as high as you can — fall below the camera and the run ends. Score = metres.</p></div>
+<div class="card2"><h2>⛓️ Chain tips</h2><p class="muted">The chain has a max length and real sag/tension. If your partner dangles, stand firm and hold PULL. Don't jump apart at the same time on narrow platforms!</p></div>
+</div>
+<footer>Chainbound Climb is an original fan-inspired prototype. GitHub Pages hosts these static files; GitHub Actions deploys them. Phone↔host traffic uses WebRTC via the free public PeerJS broker (with a same-browser BroadcastChannel fallback) — no game server is run by GitHub. If the broker is unreachable, keyboard play still works fully.</footer>
+</div><script src="game.js"></script></body></html>
